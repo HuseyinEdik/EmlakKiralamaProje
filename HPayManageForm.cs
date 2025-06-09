@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace EmlakKiralamaProje
 {
-    public partial class GirisForm : Form
+    public partial class HPayManageForm : Form
     {
-        public GirisForm()
+        public HPayManageForm()
         {
             InitializeComponent();
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
         }
     }
 }

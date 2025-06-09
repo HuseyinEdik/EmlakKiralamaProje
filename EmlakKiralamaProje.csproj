@@ -52,6 +52,36 @@
     <Compile Include="AdminMainPage.Designer.cs">
       <DependentUpon>AdminMainPage.cs</DependentUpon>
     </Compile>
+    <Compile Include="AIstRaporForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AIstRaporForm.Designer.cs">
+      <DependentUpon>AIstRaporForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AListingManageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AListingManageForm.Designer.cs">
+      <DependentUpon>AListingManageForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="APayManageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="APayManageForm.Designer.cs">
+      <DependentUpon>APayManageForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ARezerManageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ARezerManageForm.Designer.cs">
+      <DependentUpon>ARezerManageForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AUserManageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AUserManageForm.Designer.cs">
+      <DependentUpon>AUserManageForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -64,11 +94,35 @@
     <Compile Include="GirisForm.Designer.cs">
       <DependentUpon>GirisForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="HListingManageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HListingManageForm.Designer.cs">
+      <DependentUpon>HListingManageForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="HostMainPage.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="HostMainPage.Designer.cs">
       <DependentUpon>HostMainPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HPayManageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HPayManageForm.Designer.cs">
+      <DependentUpon>HPayManageForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HReviewsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HReviewsForm.Designer.cs">
+      <DependentUpon>HReviewsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HRezerManageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HRezerManageForm.Designer.cs">
+      <DependentUpon>HRezerManageForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -81,11 +135,38 @@
     <EmbeddedResource Include="AdminMainPage.resx">
       <DependentUpon>AdminMainPage.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AIstRaporForm.resx">
+      <DependentUpon>AIstRaporForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AListingManageForm.resx">
+      <DependentUpon>AListingManageForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="APayManageForm.resx">
+      <DependentUpon>APayManageForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ARezerManageForm.resx">
+      <DependentUpon>ARezerManageForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AUserManageForm.resx">
+      <DependentUpon>AUserManageForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GirisForm.resx">
       <DependentUpon>GirisForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="HListingManageForm.resx">
+      <DependentUpon>HListingManageForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="HostMainPage.resx">
       <DependentUpon>HostMainPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HPayManageForm.resx">
+      <DependentUpon>HPayManageForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HReviewsForm.resx">
+      <DependentUpon>HReviewsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRezerManageForm.resx">
+      <DependentUpon>HRezerManageForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

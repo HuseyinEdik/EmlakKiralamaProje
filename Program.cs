@@ -16,7 +16,7 @@ namespace EmlakKiralamaProje
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new HostMainPage());
+            Application.Run(new AdminMainPage());
         }
     }
 }

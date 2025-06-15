@@ -148,6 +148,11 @@ namespace EmlakKiralamaProje
             LoadUsers();
             ClearInputs();
         }
+
+        private void AUserManageForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

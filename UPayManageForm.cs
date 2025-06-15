@@ -26,9 +26,9 @@ namespace EmlakKiralamaProje
                 string query = @"
                     SELECT p.paymentID, t.title AS houseTitle, p.amount, p.paymentDate, p.status
                     FROM payments p
-                    JOIN reservations r ON p.reservationID = r.reservationID
+                    JOIN reservations r ON p.reservationID =  r.reservationID
                     JOIN tinyhouses t ON r.houseID = t.houseID
-                    WHERE r.userID = @UserID
+                     WHERE r.userID = @UserID 
                     ORDER BY p.paymentDate DESC";
 
                 SqlDataAdapter da = new SqlDataAdapter(query, conn);

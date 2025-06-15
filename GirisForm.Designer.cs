@@ -252,6 +252,7 @@
             this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "GirisForm";
             this.Text = "GirisForm";
+            this.Load += new System.EventHandler(this.GirisForm_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);

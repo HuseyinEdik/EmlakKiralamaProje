@@ -35,7 +35,7 @@ namespace EmlakKiralamaProje
                 label1.Text = "Toplam Kullanıcı Sayısı: " + userCount;
                 label2.Text = "Toplam İlan Sayısı: " + houseCount;
                 label3.Text = "Toplam Rezervasyon Sayısı: " + reservationCount;
-                label4.Text = "Toplam Gelir: " + totalRevenue.ToString("C2");
+                
             }
         }
 

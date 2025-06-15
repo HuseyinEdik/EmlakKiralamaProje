@@ -2,7 +2,6 @@
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace EmlakKiralamaProje
 {
@@ -25,10 +24,12 @@ namespace EmlakKiralamaProje
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 conn.Open();
-                 string query = @"SELECT rv.reviewID, t.title, rv.comment, rv.createdAt
-                                  FROM reviews rv
-                                  JOIN tinyhouses t ON rv.houseID = t.houseID
-                                  ORDER BY rv.createdAt DESC";
+                string query = @"SELECT rv.reviewID, t.title, rv.comment, rv.createdAt
+                                 FROM reviews rv
+                                 JOIN tinyhouses t ON rv.houseID = t.houseID
+                                 WHERE rv.userID = @UserID
+                                 ORDER BY rv.createdAt DESC";
+
                 SqlDataAdapter da = new SqlDataAdapter(query, conn);
                 da.SelectCommand.Parameters.AddWithValue("@UserID", currentUserID);
                 DataTable dt = new DataTable();
@@ -46,9 +47,9 @@ namespace EmlakKiralamaProje
             {
                 conn.Open();
                 string query = @"SELECT r.reservationID, t.houseID, t.title, t.location 
-                         FROM reservations r
-                         JOIN tinyhouses t ON r.houseID = t.houseID
-                         WHERE r.userID = @UserID AND r.status = 'kabul edildi'";
+                                 FROM reservations r
+                                 JOIN tinyhouses t ON r.houseID = t.houseID
+                                 WHERE r.userID = @UserID AND LOWER(r.status) = 'onaylandi'";
 
                 SqlDataAdapter da = new SqlDataAdapter(query, conn);
                 da.SelectCommand.Parameters.AddWithValue("@UserID", currentUserID);
@@ -56,7 +57,7 @@ namespace EmlakKiralamaProje
                 da.Fill(dt);
                 dataGridViewReservations.DataSource = dt;
 
-                dataGridViewReservations.Columns["reservationID"].Visible = true;
+                dataGridViewReservations.Columns["reservationID"].Visible = false;
             }
         }
 
@@ -75,6 +76,7 @@ namespace EmlakKiralamaProje
             if (dataGridViewReservations.CurrentRow != null)
             {
                 int reservationID = Convert.ToInt32(dataGridViewReservations.CurrentRow.Cells["reservationID"].Value);
+                int houseID = Convert.ToInt32(dataGridViewReservations.CurrentRow.Cells["houseID"].Value);
                 string comment = textBoxComment.Text.Trim();
 
                 if (string.IsNullOrWhiteSpace(comment))
@@ -86,22 +88,19 @@ namespace EmlakKiralamaProje
                 using (SqlConnection conn = new SqlConnection(connectionString))
                 {
                     conn.Open();
-                    string insertQuery = @"INSERT INTO reviews (houseID, userID,  comment, createdAt)
-                       VALUES (@HouseID, @UserID,   @Comment, GETDATE())";
+                    string insertQuery = @"INSERT INTO reviews (houseID, userID, comment, createdAt)
+                                           VALUES (@HouseID, @UserID, @Comment, GETDATE())";
 
                     SqlCommand cmd = new SqlCommand(insertQuery, conn);
-                    int houseID = Convert.ToInt32(dataGridViewReservations.CurrentRow.Cells["houseID"].Value);
-
                     cmd.Parameters.AddWithValue("@HouseID", houseID);
                     cmd.Parameters.AddWithValue("@UserID", currentUserID);
-                 
                     cmd.Parameters.AddWithValue("@Comment", comment);
-
                     cmd.ExecuteNonQuery();
                 }
 
                 MessageBox.Show("Yorum başarıyla eklendi.");
                 LoadReviews();
+                LoadReservations();  
                 textBoxComment.Clear();
             }
         }
@@ -114,14 +113,23 @@ namespace EmlakKiralamaProje
         private void buttonSubmit_Click(object sender, EventArgs e)
         {
             this.Close();
-            UserMainPage mainPage = new UserMainPage(currentUserID);        
-                mainPage.Show();
+            UserMainPage mainPage = new UserMainPage(currentUserID);
+            mainPage.Show();
+        }
+
+        
+
+  
+
+    private void dataGridViewComments_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
 
         private void dataGridViewReservations_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            LoadReservations();
+
         }
-    }
-}
+
+    } }
 

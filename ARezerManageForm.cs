@@ -52,7 +52,7 @@ namespace EmlakKiralamaProje
             }
         }
 
-        private void button7_Click(object sender, EventArgs e) // Yenile
+        private void button7_Click(object sender, EventArgs e)  
         {
             LoadReservations();
             ClearInputs();
@@ -104,6 +104,11 @@ namespace EmlakKiralamaProje
 
             LoadReservations();
             ClearInputs();
+        }
+
+        private void dataGridView3_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

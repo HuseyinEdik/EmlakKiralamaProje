@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.AdminMenuStrip = new System.Windows.Forms.MenuStrip();
+            this.aToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.kullanıcıYönetimiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rezervasyonYönetimiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ilanYönetimiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -37,11 +38,9 @@
             this.AMainPageGBX = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.aToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.AdminMenuStrip.SuspendLayout();
             this.AMainPageGBX.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -63,6 +62,13 @@
             this.AdminMenuStrip.Size = new System.Drawing.Size(854, 33);
             this.AdminMenuStrip.TabIndex = 1;
             this.AdminMenuStrip.Text = "menuStrip1";
+            // 
+            // aToolStripMenuItem
+            // 
+            this.aToolStripMenuItem.Name = "aToolStripMenuItem";
+            this.aToolStripMenuItem.Size = new System.Drawing.Size(93, 25);
+            this.aToolStripMenuItem.Text = "Ana Menü";
+            this.aToolStripMenuItem.Click += new System.EventHandler(this.aToolStripMenuItem_Click);
             // 
             // kullanıcıYönetimiToolStripMenuItem
             // 
@@ -103,7 +109,6 @@
             // 
             this.AMainPageGBX.Controls.Add(this.dataGridView1);
             this.AMainPageGBX.Controls.Add(this.label5);
-            this.AMainPageGBX.Controls.Add(this.label4);
             this.AMainPageGBX.Controls.Add(this.label3);
             this.AMainPageGBX.Controls.Add(this.label2);
             this.AMainPageGBX.Controls.Add(this.label1);
@@ -132,15 +137,6 @@
             this.label5.TabIndex = 12;
             this.label5.Text = "Yapılan Son Rezervasyonlar:";
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 259);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(123, 24);
-            this.label4.TabIndex = 11;
-            this.label4.Text = "Toplam Gelir:";
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -167,13 +163,6 @@
             this.label1.Size = new System.Drawing.Size(207, 24);
             this.label1.TabIndex = 8;
             this.label1.Text = "Toplam Kullanıcı Sayısı:";
-            // 
-            // aToolStripMenuItem
-            // 
-            this.aToolStripMenuItem.Name = "aToolStripMenuItem";
-            this.aToolStripMenuItem.Size = new System.Drawing.Size(93, 25);
-            this.aToolStripMenuItem.Text = "Ana Menü";
-            this.aToolStripMenuItem.Click += new System.EventHandler(this.aToolStripMenuItem_Click);
             // 
             // AdminMainPage
             // 
@@ -207,7 +196,6 @@
         private System.Windows.Forms.GroupBox AMainPageGBX;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;

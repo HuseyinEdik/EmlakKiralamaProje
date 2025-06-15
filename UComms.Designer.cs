@@ -57,6 +57,7 @@
             this.dataGridViewComments.Name = "dataGridViewComments";
             this.dataGridViewComments.Size = new System.Drawing.Size(344, 120);
             this.dataGridViewComments.TabIndex = 0;
+            this.dataGridViewComments.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewComments_CellContentClick);
             // 
             // label1
             // 

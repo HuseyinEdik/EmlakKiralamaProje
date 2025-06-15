@@ -2,6 +2,8 @@
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using System.Drawing;
+using System.IO;
 
 namespace EmlakKiralamaProje
 {
@@ -19,9 +21,9 @@ namespace EmlakKiralamaProje
 
             LoadListings();
             dataGridView4.CellClick += dataGridView4_CellClick;
-            button10.Click += button10_Click;  
-            button11.Click += button11_Click; 
-            button6.Click += button6_Click;  
+            button10.Click += button10_Click;
+            button11.Click += button11_Click;
+            button6.Click += button6_Click;
         }
 
         private void LoadListings()
@@ -29,7 +31,7 @@ namespace EmlakKiralamaProje
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 conn.Open();
-                SqlDataAdapter da = new SqlDataAdapter("SELECT houseID, title, ownerID, location,  isActive, pricePerNight FROM tinyhouses", conn);
+                SqlDataAdapter da = new SqlDataAdapter("SELECT houseID, title, ownerID, location, isActive, pricePerNight, imagePath FROM tinyhouses", conn);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
                 dataGridView4.DataSource = dt;
@@ -41,6 +43,7 @@ namespace EmlakKiralamaProje
             textBox10.Text = textBox6.Text = textBox8.Text = "";
             comboBox5.SelectedIndex = -1;
             numericUpDown1.Value = 0;
+            pictureBox1.Image = null;
             selectedHouseId = -1;
         }
 
@@ -53,28 +56,29 @@ namespace EmlakKiralamaProje
                 textBox10.Text = row.Cells["title"].Value.ToString();
                 textBox6.Text = row.Cells["ownerID"].Value.ToString();
                 textBox8.Text = row.Cells["location"].Value.ToString();
-
-                
-
                 comboBox5.Text = Convert.ToBoolean(row.Cells["isActive"].Value) ? "aktif" : "pasif";
 
                 if (row.Cells["pricePerNight"].Value != DBNull.Value)
                     numericUpDown1.Value = Convert.ToDecimal(row.Cells["pricePerNight"].Value);
+
+                // Görsel yükleme işlemi
+                string imagePath = row.Cells["imagePath"].Value?.ToString();
+                if (!string.IsNullOrEmpty(imagePath) && File.Exists(imagePath))
+                {
+                    pictureBox1.Image = Image.FromFile(imagePath);
+                }
+                else
+                {
+                    pictureBox1.Image = null;
+                }
             }
         }
-
-        
-
-        
-
-        
 
         private void BtnAnaMenu_Click(object sender, EventArgs e)
         {
             AdminMainPage adminMain = new AdminMainPage();
             adminMain.Show();
-
-            this.Hide(); 
+            this.Hide();
         }
 
         private void button11_Click(object sender, EventArgs e)
@@ -111,7 +115,6 @@ namespace EmlakKiralamaProje
                 SqlCommand cmd = new SqlCommand("UPDATE tinyhouses SET title=@title, location=@location, isActive=@active, pricePerNight=@price WHERE houseID=@id", conn);
                 cmd.Parameters.AddWithValue("@title", textBox10.Text);
                 cmd.Parameters.AddWithValue("@location", textBox8.Text);
-                 
                 cmd.Parameters.AddWithValue("@active", comboBox5.Text == "aktif" ? 1 : 0);
                 cmd.Parameters.AddWithValue("@price", numericUpDown1.Value);
                 cmd.Parameters.AddWithValue("@id", selectedHouseId);
@@ -127,6 +130,11 @@ namespace EmlakKiralamaProje
             LoadListings();
             ClearInputs();
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+        }
     }
 }
+
 

@@ -40,9 +40,7 @@ namespace EmlakKiralamaProje
         private void BtnAnaMenu_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        
+        } 
 
         private void dataGridView4_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -86,9 +84,7 @@ namespace EmlakKiralamaProje
             }
             
             }
-
-
-
+         
 
         private void button11_Click(object sender, EventArgs e)
         {
@@ -102,10 +98,13 @@ namespace EmlakKiralamaProje
             {
                 conn.Open();
 
-                using (SqlCommand cmd = new SqlCommand("ilanEkle", conn))
-                {
-                    cmd.CommandType = CommandType.StoredProcedure;
+                string insertQuery = @"INSERT INTO tinyhouses 
+                               (ownerID, title, location, pricePerNight, isActive, createdAt)
+                               VALUES 
+                               (@OwnerID, @Title, @Location, @Price, @IsActive, GETDATE())";
 
+                using (SqlCommand cmd = new SqlCommand(insertQuery, conn))
+                {
                     cmd.Parameters.AddWithValue("@OwnerID", currentUserID);
                     cmd.Parameters.AddWithValue("@Title", textBox10.Text.Trim());
                     cmd.Parameters.AddWithValue("@Location", textBox8.Text.Trim());
@@ -119,6 +118,7 @@ namespace EmlakKiralamaProje
                 LoadListings();
             }
         }
+
 
 
         private void button10_Click_1(object sender, EventArgs e)

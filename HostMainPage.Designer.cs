@@ -51,7 +51,7 @@ namespace EmlakKiralamaProje
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label2.Location = new System.Drawing.Point(30, 100);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(100, 23);
+            this.label2.Size = new System.Drawing.Size(209, 23);
             this.label2.TabIndex = 1;
             this.label2.Text = "Toplam Rezervasyon Sayısı:";
             // 
@@ -107,6 +107,7 @@ namespace EmlakKiralamaProje
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.Size = new System.Drawing.Size(566, 160);
             this.dataGridView2.TabIndex = 9;
+            this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
             // HostMenuStrip
             // 

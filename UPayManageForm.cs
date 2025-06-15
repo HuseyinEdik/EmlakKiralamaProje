@@ -28,7 +28,7 @@ namespace EmlakKiralamaProje
                     FROM payments p
                     JOIN reservations r ON p.reservationID =  r.reservationID
                     JOIN tinyhouses t ON r.houseID = t.houseID
-                     WHERE r.userID = @UserID 
+                     
                     ORDER BY p.paymentDate DESC";
 
                 SqlDataAdapter da = new SqlDataAdapter(query, conn);

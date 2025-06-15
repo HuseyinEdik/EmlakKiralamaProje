@@ -68,6 +68,7 @@
             this.AUserManageGBX.TabIndex = 14;
             this.AUserManageGBX.TabStop = false;
             this.AUserManageGBX.Text = "Kullanıcı Yönetimi";
+            this.AUserManageGBX.Enter += new System.EventHandler(this.AUserManageGBX_Enter);
             // 
             // button5
             // 

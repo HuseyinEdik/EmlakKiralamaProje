@@ -83,7 +83,8 @@ namespace EmlakKiralamaProje
         {
             LoadUsers();
             ClearInputs();
- 
+
+
         }
 
         private void button2_Click_1(object sender, EventArgs e)
@@ -150,6 +151,11 @@ namespace EmlakKiralamaProje
         }
 
         private void AUserManageForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AUserManageGBX_Enter(object sender, EventArgs e)
         {
 
         }

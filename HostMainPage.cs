@@ -49,17 +49,29 @@ namespace EmlakKiralamaProje
             {
                 conn.Open();
 
-                SqlCommand cmd = new SqlCommand("LastReservations", conn);   // sp çagırdıgım yer.
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@OwnerID", currentUserID);
+                string query = @"
+            SELECT TOP 10 r.reservationID, 
+                           u.firstName + ' ' + u.lastName AS UserName, 
+                           t.title, 
+                           r.startDate, 
+                           r.endDate
+            FROM reservations r
+            JOIN users u ON r.userID = u.userID
+            JOIN tinyhouses t ON r.houseID = t.houseID
+            WHERE r.createdAt BETWEEN DATEADD(DAY, -7, GETDATE()) AND GETDATE()
+              AND t.ownerID = @OwnerID
+            ORDER BY r.createdAt DESC";
 
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                SqlDataAdapter da = new SqlDataAdapter(query, conn);
+                da.SelectCommand.Parameters.AddWithValue("@OwnerID", currentUserID);
+
                 DataTable dt = new DataTable();
                 da.Fill(dt);
 
                 dataGridView2.DataSource = dt;
             }
         }
+
 
 
         private void ilanlarımToolStripMenuItem_Click(object sender, EventArgs e)
@@ -117,6 +129,11 @@ namespace EmlakKiralamaProje
         }
 
         private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

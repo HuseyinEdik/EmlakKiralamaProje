@@ -32,8 +32,12 @@
             this.HRezerManageGBX = new System.Windows.Forms.GroupBox();
             this.label19 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.Rezervationİnfo = new System.Windows.Forms.GroupBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.endDate = new System.Windows.Forms.DateTimePicker();
@@ -45,10 +49,6 @@
             this.label15 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
             this.HRezerManageGBX.SuspendLayout();
             this.Rezervationİnfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
@@ -98,6 +98,16 @@
             this.label18.TabIndex = 9;
             this.label18.Text = "Rezervasyonlarım";
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(596, 336);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(84, 35);
+            this.button2.TabIndex = 17;
+            this.button2.Text = "Reddet";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
+            // 
             // button7
             // 
             this.button7.Location = new System.Drawing.Point(686, 336);
@@ -106,6 +116,17 @@
             this.button7.TabIndex = 7;
             this.button7.Text = "Yenile";
             this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click_1);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(490, 336);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(100, 35);
+            this.button1.TabIndex = 16;
+            this.button1.Text = "Kabul et";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // Rezervationİnfo
             // 
@@ -127,6 +148,22 @@
             this.Rezervationİnfo.TabIndex = 4;
             this.Rezervationİnfo.TabStop = false;
             this.Rezervationİnfo.Text = "Rezervasyon Bilgileri";
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(207, 252);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.ReadOnly = true;
+            this.textBox3.Size = new System.Drawing.Size(142, 29);
+            this.textBox3.TabIndex = 19;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(207, 212);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.ReadOnly = true;
+            this.textBox2.Size = new System.Drawing.Size(142, 29);
+            this.textBox2.TabIndex = 18;
             // 
             // textBox1
             // 
@@ -219,40 +256,6 @@
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.Size = new System.Drawing.Size(414, 252);
             this.dataGridView3.TabIndex = 0;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(490, 336);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 35);
-            this.button1.TabIndex = 16;
-            this.button1.Text = "Kabul et";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(596, 336);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(84, 35);
-            this.button2.TabIndex = 17;
-            this.button2.Text = "Reddet";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(207, 212);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(142, 29);
-            this.textBox2.TabIndex = 18;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(207, 252);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(142, 29);
-            this.textBox3.TabIndex = 19;
             // 
             // HRezerManageForm
             // 

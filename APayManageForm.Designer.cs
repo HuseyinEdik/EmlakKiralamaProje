@@ -93,6 +93,7 @@
             this.button12.TabIndex = 7;
             this.button12.Text = "Yenile";
             this.button12.UseVisualStyleBackColor = true;
+            this.button12.Click += new System.EventHandler(this.button12_Click);
             // 
             // button13
             // 
@@ -102,6 +103,7 @@
             this.button13.TabIndex = 6;
             this.button13.Text = "Güncelle";
             this.button13.UseVisualStyleBackColor = true;
+            this.button13.Click += new System.EventHandler(this.button13_Click);
             // 
             // groupBox3
             // 
@@ -230,7 +232,7 @@
             this.Controls.Add(this.BtnAnaMenu);
             this.Controls.Add(this.APayManageGBX);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "APayManageForm";
             this.Text = "APayManageForm";
             this.APayManageGBX.ResumeLayout(false);

@@ -107,6 +107,7 @@
             this.button8.TabIndex = 6;
             this.button8.Text = "Güncelle";
             this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click_1);
             // 
             // button9
             // 
@@ -116,6 +117,7 @@
             this.button9.TabIndex = 5;
             this.button9.Text = "İptal Et";
             this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // Rezervationİnfo
             // 

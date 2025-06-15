@@ -10,20 +10,11 @@ using System.Windows.Forms;
 
 namespace EmlakKiralamaProje
 {
-    public partial class AIstRaporForm : Form
+    public partial class URezerReqForm : Form
     {
-        public AIstRaporForm()
+        public URezerReqForm()
         {
             InitializeComponent();
-        }
-
-        private void BtnAnaMenu_Click(object sender, EventArgs e)
-        {
-
-            AdminMainPage adminPage = new AdminMainPage();      
-            adminPage.Show();
-
-            this.Close();
         }
     }
 }

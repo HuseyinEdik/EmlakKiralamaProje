@@ -38,12 +38,9 @@
             this.textBox10 = new System.Windows.Forms.TextBox();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.comboBox5 = new System.Windows.Forms.ComboBox();
-            this.dateTimePicker4 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.label27 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
@@ -100,6 +97,7 @@
             this.button6.TabIndex = 7;
             this.button6.Text = "Yenile";
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button10
             // 
@@ -109,6 +107,7 @@
             this.button10.TabIndex = 6;
             this.button10.Text = "Güncelle";
             this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
             // button11
             // 
@@ -118,18 +117,16 @@
             this.button11.TabIndex = 5;
             this.button11.Text = "Sil";
             this.button11.UseVisualStyleBackColor = true;
+            this.button11.Click += new System.EventHandler(this.button11_Click);
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.textBox10);
             this.groupBox2.Controls.Add(this.numericUpDown1);
             this.groupBox2.Controls.Add(this.comboBox5);
-            this.groupBox2.Controls.Add(this.dateTimePicker4);
-            this.groupBox2.Controls.Add(this.dateTimePicker3);
             this.groupBox2.Controls.Add(this.textBox8);
             this.groupBox2.Controls.Add(this.textBox6);
             this.groupBox2.Controls.Add(this.label27);
-            this.groupBox2.Controls.Add(this.label26);
             this.groupBox2.Controls.Add(this.label25);
             this.groupBox2.Controls.Add(this.label24);
             this.groupBox2.Controls.Add(this.label23);
@@ -152,7 +149,7 @@
             // 
             // numericUpDown1
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(246, 275);
+            this.numericUpDown1.Location = new System.Drawing.Point(246, 265);
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(103, 29);
             this.numericUpDown1.TabIndex = 5;
@@ -163,26 +160,10 @@
             this.comboBox5.Items.AddRange(new object[] {
             "pasif",
             "aktif"});
-            this.comboBox5.Location = new System.Drawing.Point(96, 274);
+            this.comboBox5.Location = new System.Drawing.Point(96, 264);
             this.comboBox5.Name = "comboBox5";
             this.comboBox5.Size = new System.Drawing.Size(84, 32);
             this.comboBox5.TabIndex = 11;
-            // 
-            // dateTimePicker4
-            // 
-            this.dateTimePicker4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.dateTimePicker4.Location = new System.Drawing.Point(235, 240);
-            this.dateTimePicker4.Name = "dateTimePicker4";
-            this.dateTimePicker4.Size = new System.Drawing.Size(122, 22);
-            this.dateTimePicker4.TabIndex = 10;
-            // 
-            // dateTimePicker3
-            // 
-            this.dateTimePicker3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.dateTimePicker3.Location = new System.Drawing.Point(107, 240);
-            this.dateTimePicker3.Name = "dateTimePicker3";
-            this.dateTimePicker3.Size = new System.Drawing.Size(122, 22);
-            this.dateTimePicker3.TabIndex = 9;
             // 
             // textBox8
             // 
@@ -201,20 +182,11 @@
             // label27
             // 
             this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(17, 278);
+            this.label27.Location = new System.Drawing.Point(17, 268);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(72, 24);
             this.label27.TabIndex = 6;
             this.label27.Text = "Durum:";
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(17, 238);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(94, 24);
-            this.label26.TabIndex = 5;
-            this.label26.Text = "Uygunluk:";
             // 
             // label25
             // 
@@ -228,7 +200,7 @@
             // label24
             // 
             this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(186, 278);
+            this.label24.Location = new System.Drawing.Point(186, 268);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(54, 24);
             this.label24.TabIndex = 3;
@@ -313,12 +285,9 @@
         private System.Windows.Forms.TextBox textBox10;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.ComboBox comboBox5;
-        private System.Windows.Forms.DateTimePicker dateTimePicker4;
-        private System.Windows.Forms.DateTimePicker dateTimePicker3;
         private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.Label label27;
-        private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label label23;

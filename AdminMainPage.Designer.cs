@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.AdminMenuStrip = new System.Windows.Forms.MenuStrip();
-            this.aToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.kullanıcıYönetimiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rezervasyonYönetimiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ilanYönetimiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -42,6 +41,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.aToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.AdminMenuStrip.SuspendLayout();
             this.AMainPageGBX.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -63,12 +63,6 @@
             this.AdminMenuStrip.Size = new System.Drawing.Size(854, 33);
             this.AdminMenuStrip.TabIndex = 1;
             this.AdminMenuStrip.Text = "menuStrip1";
-            // 
-            // aToolStripMenuItem
-            // 
-            this.aToolStripMenuItem.Name = "aToolStripMenuItem";
-            this.aToolStripMenuItem.Size = new System.Drawing.Size(93, 25);
-            this.aToolStripMenuItem.Text = "Ana Menü";
             // 
             // kullanıcıYönetimiToolStripMenuItem
             // 
@@ -119,19 +113,20 @@
             this.AMainPageGBX.TabIndex = 2;
             this.AMainPageGBX.TabStop = false;
             this.AMainPageGBX.Text = "Ana Sayfa";
+            this.AMainPageGBX.Enter += new System.EventHandler(this.AMainPageGBX_Enter);
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(429, 123);
+            this.dataGridView1.Location = new System.Drawing.Point(288, 88);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(393, 150);
+            this.dataGridView1.Size = new System.Drawing.Size(534, 290);
             this.dataGridView1.TabIndex = 13;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(425, 78);
+            this.label5.Location = new System.Drawing.Point(430, 32);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(250, 24);
             this.label5.TabIndex = 12;
@@ -140,7 +135,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(40, 224);
+            this.label4.Location = new System.Drawing.Point(6, 259);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(123, 24);
             this.label4.TabIndex = 11;
@@ -149,7 +144,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(40, 180);
+            this.label3.Location = new System.Drawing.Point(6, 215);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(246, 24);
             this.label3.TabIndex = 10;
@@ -158,7 +153,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(40, 133);
+            this.label2.Location = new System.Drawing.Point(6, 168);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(166, 24);
             this.label2.TabIndex = 9;
@@ -167,11 +162,18 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(40, 88);
+            this.label1.Location = new System.Drawing.Point(6, 123);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(207, 24);
             this.label1.TabIndex = 8;
             this.label1.Text = "Toplam Kullanıcı Sayısı:";
+            // 
+            // aToolStripMenuItem
+            // 
+            this.aToolStripMenuItem.Name = "aToolStripMenuItem";
+            this.aToolStripMenuItem.Size = new System.Drawing.Size(93, 25);
+            this.aToolStripMenuItem.Text = "Ana Menü";
+            this.aToolStripMenuItem.Click += new System.EventHandler(this.aToolStripMenuItem_Click);
             // 
             // AdminMainPage
             // 
@@ -197,7 +199,6 @@
         #endregion
 
         private System.Windows.Forms.MenuStrip AdminMenuStrip;
-        private System.Windows.Forms.ToolStripMenuItem aToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem kullanıcıYönetimiToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem rezervasyonYönetimiToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ilanYönetimiToolStripMenuItem;
@@ -210,5 +211,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ToolStripMenuItem aToolStripMenuItem;
     }
 }
